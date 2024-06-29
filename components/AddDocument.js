@@ -53,7 +53,7 @@ const AddDocument = () => {
     <input id='upload' className='hidden' type='file' accept='.pdf' onChange={(e) => setFiles(e.target.files) }/>
     {
         Array.from(files)?.map((file) => (
-            <p>{file.name}</p>
+            <p key={file}>{file.name}</p>
         ))
     }
     {files.length > 0 && <button onClick={() => handleSubmit(files[0])}>Submit</button>}
